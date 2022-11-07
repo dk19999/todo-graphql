@@ -6,5 +6,6 @@ type Todo {
 
 type Query {
      todos:[Todo!]!
+     todo(id: ID!):Todo
 } 
 `;
