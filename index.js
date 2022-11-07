@@ -1,6 +1,8 @@
 
 const {ApolloServer, gql} = require('apollo-server')
 
+const {db } = require('./src/schema/todo/db')
+
 const typeDefs = gql`
 
 
@@ -19,6 +21,7 @@ const resolvers =  {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    context:{db}
 })
 
 server.listen().then(({url}) => {
