@@ -1,20 +1,19 @@
 
 const {ApolloServer, gql} = require('apollo-server')
 
+const {TodoQuery} = require('./src/schema/todo/query')
 const {db } = require('./src/schema/todo/db')
+const { TodoTypes } =  require('./src/schema/todo/types.js');
 
 const typeDefs = gql`
 
-
-    type Query{
-        greeting:String
-    }
-
+    ${TodoTypes}
+    
 `
 
 const resolvers =  {
     Query:{
-      greeting:() => 'Hello'
+       ...TodoQuery
     }
 }
 
