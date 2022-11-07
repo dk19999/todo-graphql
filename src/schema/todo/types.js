@@ -12,6 +12,7 @@ type Query {
 extend type Mutation {
      todoCreate(input:TodoCreateInput!):Todo
      todoUpdate(input:TodoUpdateInput!):Todo
+     todoDelete(id:ID!):Boolean!
 }
 
 input TodoCreateInput {
